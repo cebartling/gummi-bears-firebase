@@ -1,9 +1,16 @@
-const {gql} = require('apollo-server-express');
+import {gql} from 'apollo-server-express';
 
 const schema = gql`
+    type SymbolSearchResult {
+        symbol: String!
+        name: String!
+    }
+
     type Query {
         "A simple type for getting started!"
         hello: String
+
+        symbolSearch(keyword: String!): [SymbolSearchResult!]!
     }
 `;
 

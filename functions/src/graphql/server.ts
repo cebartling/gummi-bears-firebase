@@ -8,15 +8,12 @@ import resolvers from './resolvers';
 
 function gqlServer() {
   const app = express();
-
   const apolloServer = new ApolloServer({
     typeDefs: schema,
     resolvers,
-    // Enable graphiql gui
     introspection: true,
-    playground: true
+    playground: false
   });
-
   apolloServer.applyMiddleware({app, path: '/', cors: true});
 
   return app;

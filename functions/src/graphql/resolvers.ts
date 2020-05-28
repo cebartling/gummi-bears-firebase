@@ -1,6 +1,9 @@
+import symbolSearch from './resolvers/SymbolSearch';
+
 const resolverFunctions = {
   Query: {
-    hello: () => 'world'
+    hello: () => 'world',
+    symbolSearch
   }
 };
 
